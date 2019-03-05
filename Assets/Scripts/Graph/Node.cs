@@ -7,12 +7,11 @@ namespace NodeVR
     public class Node
     {
         public int index;
-        public List<Arc> Arcs;
+        public List<Arc> arcs;
 
-        public Node(int index)
+        public Node()
         {
-            this.index = index;
-            this.Arcs = new List<Arc>();
+            arcs = new List<Arc>();
         }
     }
 }

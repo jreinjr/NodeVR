@@ -14,19 +14,24 @@ namespace NodeVR
             Nodes = new List<Node>();
             for (int i = 0; i < numNodes; i++)
             {
-                AddNode(i);
+                AddNode();
             }
         }
 
-        public void AddNode(int index)
+        public void AddNode()
         {
-            Nodes.Add(new Node(index));
+            Nodes.Add(new Node());
         }
 
         public void AddArc(Node start, Node end, int capacity)
         {
-            start.Arcs.Add(new Arc(end, start, capacity));
-            end.Arcs.Add(new Arc(start, end, 0));
+            AddArc(start.index, end.index, capacity);
+        }
+
+        public void AddArc(int start, int end, int capacity)
+        {
+            Nodes[start].arcs.Add(new Arc(end, Nodes[end].arcs.Count(), capacity));
+            Nodes[end].arcs.Add(new Arc(start, Nodes[start].arcs.Count() - 1, 0));
         }
     }
 }

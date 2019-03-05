@@ -1,5 +1,4 @@
 ﻿// Gracias a github.com/jdamador
-using UnityEngine;
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -16,7 +15,7 @@ namespace NodeVR
         /// <param name="start"></param>
         /// <param name="end"></param>
         /// <returns></returns>
-        public static int maxFlow(Graph graph, Node start, Node end)
+        public static int maxFlow(Graph graph, int start, int end)
         {
             int flow = 0;
             int[] dist = new int[graph.Nodes.Count];
@@ -42,46 +41,45 @@ namespace NodeVR
         /// <param name="end">Vertice de destino</param>
         /// <param name="dist">distancia</param>
         /// <returns></returns>
-        static bool dinicBFS(Graph graph, Node start, Node end, int[] dist)
+        static bool dinicBFS(Graph graph, int start, int end, int[] dist)
         {
             dist.Fill(-1);
-            dist[start.index] = 0;
+            dist[start] = 0;
             int[] queue = new int[graph.Nodes.Count()]; //a queue is created to add the remaining values
             int sizeQ = 0;
-            queue[sizeQ++] = start.index;
+            queue[sizeQ++] = start;
             for (int i = 0; i < sizeQ; i++)
             {
                 int u = queue[i];
-                foreach (Arc arc in graph.Nodes[u].Arcs)
+                foreach (Arc aux in graph.Nodes[u].arcs)
                 {
-                    if (dist[arc.fromNode.index] < 0 && arc.currentFlow < arc.capacity)
+                    if (dist[aux.index] < 0 && aux.flow < aux.capacity)
                     {
-                        dist[arc.fromNode.index] = dist[u] + 1;
-                        queue[sizeQ++] = arc.fromNode.index;
+                        dist[aux.index] = dist[u] + 1;
+                        queue[sizeQ++] = aux.index;
                     }
                 }
             }
-            return dist[end.index] >= 0;
+            return dist[end] >= 0;
         }
 
         /// <summary>
         /// Depth first search
         /// </summary>
-        static int dinicDfs(Graph graph, int[] ptr, int[] dist, Node end, Node start, int flow)
+        static int dinicDfs(Graph graph, int[] ptr, int[] dist, int dest, int u, int flow)
         {
-            if (start == end)
+            if (u == dest)
                 return flow;
-            for (; ptr[start.index] < start.Arcs.Count(); ++ptr[start.index])
+            for (; ptr[u] < graph.Nodes[u].arcs.Count(); ++ptr[u])
             {
-                Arc arc = start.Arcs[ptr[start.index]];
-                if (dist[arc.fromNode.index] == dist[start.index] + 1 && arc.currentFlow < arc.capacity)
+                Arc e = graph.Nodes[u].arcs[ptr[u]];
+                if (dist[e.index] == dist[u] + 1 && e.flow < e.capacity)
                 {
-                    int df = dinicDfs(graph, ptr, dist, end, arc.fromNode, Math.Min(flow, arc.capacity - arc.currentFlow));
+                    int df = dinicDfs(graph, ptr, dist, dest, e.index, Math.Min(flow, e.capacity - e.flow));
                     if (df > 0)
                     {
-                        arc.currentFlow += df;
-                        arc.fromNode.Arcs.Where(p => p.toNode == arc.toNode).First().currentFlow -= df;
-                        //graph.Nodes[arc.fromNode.index].Arcs[arc.toNode.index].currentFlow -= df;
+                        e.flow += df;
+                        graph.Nodes[e.index].arcs[e.toNode].flow -= df;
                         return df;
                     }
                 }
