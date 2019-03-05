@@ -21,13 +21,13 @@ namespace NodeVR
         public bool IsProducing { get; protected set; }
 
         [SerializeField] private float currentPsi = 0f;
-        public float maxPsi = 100f;
-        public float psiPerSec = 1f;
+        public int maxPsi = 100;
+        public int psiPerSec = 1;
         public int maxActiveConnections = 1;
 
         private void Start()
         {
-            GraphNodeIndex = ++nextIndex;
+            GraphNodeIndex = nextIndex++;
 
             connectedNodes = new List<NodeBehaviour>();
             connections = new List<ArcBehaviour>();
@@ -75,13 +75,13 @@ namespace NodeVR
 
         public void UpgradeMaxPsi()
         {
-            maxPsi += 100f;
+            maxPsi += 100;
         }
 
         public void UpgradePsiPerSec()
         {
             IsProducing = true;
-            psiPerSec += 1f;
+            psiPerSec += 1;
         }
 
         public void UpgradeMaxActiveConnections()

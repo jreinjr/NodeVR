@@ -25,7 +25,8 @@ namespace NodeVR
 
         public void AddArc(Node start, Node end, int capacity)
         {
-            AddArc(start.index, end.index, capacity);
+            start.arcs.Add(new Arc(end.index, Nodes[end.index].arcs.Count(), capacity));
+            end.arcs.Add(new Arc(end.index, Nodes[end.index].arcs.Count(), 0));
         }
 
         public void AddArc(int start, int end, int capacity)

@@ -151,7 +151,7 @@ namespace NodeVR
             }
         }
 
-        private ArcBehaviour SpawnArc(NodeBehaviour fromNode, NodeBehaviour toNode)
+        public ArcBehaviour SpawnArc(NodeBehaviour fromNode, NodeBehaviour toNode)
         {
             // Set new connection position to average of node positions
             Vector3 newPos = 0.5f * (fromNode.transform.position + toNode.transform.position);

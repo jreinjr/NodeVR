@@ -23,10 +23,16 @@ namespace NodeVR
         public float lineAspect = 0.75f;
         public float lineWidth = 0.2f;
 
-        public float maxPsiThruPerSec = 0f;
-        public float currentPsiThruPerSec = 0f;
+        public int maxPsiThruPerSec = 0;
+        public int currentPsiThruPerSec = 0;
         public float boxColliderRadius = .25f;
 
+        bool IsInitialized = false;
+        private void Start()
+        {
+            if (!IsInitialized && fromNode != null && toNode != null)
+                Initialize(fromNode, toNode);
+        }
 
         public void Initialize(NodeBehaviour fromNode, NodeBehaviour toNode)
         {
@@ -48,6 +54,8 @@ namespace NodeVR
             AddColliderToLine(from, to);
 
             UpdateRenderer();
+
+            IsInitialized = true;
         }
 
 

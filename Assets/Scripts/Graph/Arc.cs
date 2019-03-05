@@ -5,13 +5,14 @@ namespace NodeVR
     public class Arc
     {
         //Global Variables
-        public int index, toNode, capacity, flow;
+        public int fromNodeIndex, toNodeIndex, capacity, flow;
         //Arc class, used to instantiate each edge in the graph
-        public Arc(int fromNode, int toNode, int capacity)
+        public Arc(int fromNodeIndex, int toNodeIndex, int capacity)
         {
-            this.index = fromNode;
-            this.toNode = toNode;
+            this.fromNodeIndex = fromNodeIndex;
+            this.toNodeIndex = toNodeIndex;
             this.capacity = capacity;
+            this.flow = 0;
         }
     }
 }
