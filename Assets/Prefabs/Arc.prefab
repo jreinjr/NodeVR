@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 3132849919143466828}
   - component: {fileID: 990004028218662967}
   - component: {fileID: 7448756917413541219}
+  - component: {fileID: 7564429209663408332}
   m_Layer: 0
-  m_Name: Connection
+  m_Name: Arc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +73,7 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 5}
+  - {x: 2, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -141,14 +142,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 990004028218662967}
-  lineTexture: {fileID: 2800000, guid: d3266db004954ca4998f3fd9aa4ef570, type: 3}
+  lineTexture: {fileID: 2800000, guid: d6b950f3cb58fa547b1bfd2819bb89e7, type: 3}
   fromNode: {fileID: 0}
   toNode: {fileID: 0}
   selectionLine: {fileID: 9135220965928213006}
   lineAspect: 0.75
   lineWidth: 0.2
-  psiThroughPerSec: 0
+  maxPsiThruPerSec: 0
+  currentPsiThruPerSec: 0
   boxColliderRadius: 0.25
+--- !u!114 &7564429209663408332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267522914192495544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb67cbc9bc6f83e4faa2a85076786db7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selectionGO: {fileID: 8717258723279279769}
 --- !u!1 &8717258723279279769
 GameObject:
   m_ObjectHideFlags: 0

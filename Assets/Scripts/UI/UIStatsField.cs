@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 namespace NodeVR
 {
-    public class UIInfoField : MonoBehaviour
+    public class UIStatsField : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI propertyTextUGUI;
         public TextMeshProUGUI PropertyTextUGUI

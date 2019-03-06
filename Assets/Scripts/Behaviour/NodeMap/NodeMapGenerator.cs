@@ -140,14 +140,14 @@ namespace NodeVR
                 var tempArcs = new List<ArcBehaviour>();
                 foreach (NodeBehaviour o in n.connectedNodes)
                 {
-                    if (NodeMapManager.NodeArcsMap.ContainsKey(o))
-                        continue;
+                    if (NodeMapManager.NodeArcsMap[o].Select(p => p.toNode).Contains(n)) { }
+                        //continue;
                     else
                         tempArcs.Add(SpawnArc(fromNode: n, toNode: o));
                 }
 
                 // TODO: Loosely couple
-                NodeMapManager.NodeArcsMap.Add(n, tempArcs);
+                NodeMapManager.NodeArcsMap[n].AddRange(tempArcs);
             }
         }
 

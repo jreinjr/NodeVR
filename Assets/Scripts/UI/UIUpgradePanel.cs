@@ -48,19 +48,20 @@ namespace NodeVR
         }
 
 
-        protected void OnSelectableSelected(ISelectable selectable)
+        protected void OnSelectableSelected(Selectable selectable)
         {
             WipeInterface();
+            var actionComponent = selectable.gameObject.GetComponent<IHasUpgrades>();
 
-            if (selectable.GetType().GetInterfaces().Contains(typeof(IHasActions)))
+            if (actionComponent != null)
             {
-                UpdateInterface(selectable as IHasActions);
+                UpdateInterface(actionComponent as IHasUpgrades);
             }
         }
 
-        protected void UpdateInterface(IHasActions hasActions)
+        protected void UpdateInterface(IHasUpgrades hasActions)
         {
-            var newActions = hasActions.ReportActions();
+            var newActions = hasActions.ReportAvailableUpgrades();
             SpawnOptionButtonsFromList(newActions);
         }
 

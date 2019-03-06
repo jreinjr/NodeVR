@@ -11,9 +11,9 @@ namespace NodeVR
     public class NodeMapController : MonoBehaviour
     {
         public NodeMapManager nodeConnectionMapManager;
-        private ISelectable currentSelection;
+        private Selectable currentSelection;
 
-        public static Action<ISelectable> SelectableSelected = delegate { };
+        public static Action<Selectable> SelectableSelected = delegate { };
 
         private void Update()
         {
@@ -30,7 +30,7 @@ namespace NodeVR
 
         void Select()
         {
-            var clicked = GetValidClick<ISelectable>();
+            var clicked = GetValidClick<Selectable>();
             if (clicked != null)
             {
                 if (currentSelection != null)

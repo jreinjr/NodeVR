@@ -12,7 +12,10 @@ GameObject:
   - component: {fileID: 5317302548389232455}
   - component: {fileID: 4873183977996579007}
   - component: {fileID: 7531329371713354749}
-  - component: {fileID: 8188218506593296221}
+  - component: {fileID: 4428094932471982314}
+  - component: {fileID: 7388576234353500023}
+  - component: {fileID: 8302366784229600569}
+  - component: {fileID: 1933827855418051064}
   m_Layer: 0
   m_Name: Node
   m_TagString: Untagged
@@ -93,7 +96,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8188218506593296221
+--- !u!114 &4428094932471982314
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,18 +105,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 41565458957611000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50b22dba292d78640ac21a04daf17fcc, type: 3}
+  m_Script: {fileID: 11500000, guid: 0335bab6ce3f8ed4088ab7c2a1abe073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 4873183977996579007}
+  rend: {fileID: 0}
   nodeColor: {r: 0, g: 0, b: 0, a: 0}
   connectedNodes: []
-  connections: []
-  selectionGO: {fileID: 3028554537304045247}
+--- !u!114 &7388576234353500023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41565458957611000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb67cbc9bc6f83e4faa2a85076786db7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selectionGO: {fileID: 3028554537304045247}
+--- !u!114 &8302366784229600569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41565458957611000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e731cdac5ed64fe43a68219ee8dada7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1933827855418051064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41565458957611000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b95d91dfa86e114b97fe9af9188d0b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   currentPsi: 0
-  maxPsi: 50
-  psiPerSec: 0
-  maxActiveConnections: 0
 --- !u!1 &3028554537304045247
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4953079852579869078}
   - component: {fileID: 3677618574427720715}
-  - component: {fileID: 1626909032108479819}
+  - component: {fileID: 467737755559125201}
   m_Layer: 0
   m_Name: SelectionGO
   m_TagString: Untagged
@@ -194,7 +229,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1626909032108479819
+--- !u!114 &467737755559125201
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,6 +238,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3028554537304045247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32c168c4ead08a4448edef3020bdcf32, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d5a275c2e06bd14b97db121acf61b87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -4,12 +4,12 @@ namespace NodeVR
 {
     public class Arc
     {
+        public Arc backflow;
         //Global Variables
-        public int fromNodeIndex, toNodeIndex, capacity, flow;
+        public int toNodeIndex, capacity, flow;
         //Arc class, used to instantiate each edge in the graph
-        public Arc(int fromNodeIndex, int toNodeIndex, int capacity)
+        public Arc(int toNodeIndex, int capacity)
         {
-            this.fromNodeIndex = fromNodeIndex;
             this.toNodeIndex = toNodeIndex;
             this.capacity = capacity;
             this.flow = 0;

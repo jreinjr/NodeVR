@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &9113863761950868586
+--- !u!1001 &4778808055856940849
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -24,19 +24,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8188218506593296221, guid: 5083a6897a798ae429ca1235c860e7f5,
         type: 3}
-      propertyPath: maxActiveConnections
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8188218506593296221, guid: 5083a6897a798ae429ca1235c860e7f5,
-        type: 3}
       propertyPath: rend
       value: 
-      objectReference: {fileID: 4457426529445442773}
+      objectReference: {fileID: 139817857318696846}
     - target: {fileID: 8188218506593296221, guid: 5083a6897a798ae429ca1235c860e7f5,
         type: 3}
       propertyPath: selectionGO
       value: 
-      objectReference: {fileID: 6088132787704214229}
+      objectReference: {fileID: 7518243725643313550}
     - target: {fileID: 8627911925856009187, guid: 5083a6897a798ae429ca1235c860e7f5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -92,37 +87,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 851775819723609333, guid: 5083a6897a798ae429ca1235c860e7f5,
-        type: 3}
-      propertyPath: psiPerSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 851775819723609333, guid: 5083a6897a798ae429ca1235c860e7f5,
-        type: 3}
-      propertyPath: maxPsi
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 851775819723609333, guid: 5083a6897a798ae429ca1235c860e7f5,
-        type: 3}
-      propertyPath: rend
-      value: 
-      objectReference: {fileID: 4457426529445442773}
-    - target: {fileID: 851775819723609333, guid: 5083a6897a798ae429ca1235c860e7f5,
-        type: 3}
-      propertyPath: selectionGO
-      value: 
-      objectReference: {fileID: 6088132787704214229}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5083a6897a798ae429ca1235c860e7f5, type: 3}
---- !u!23 &4457426529445442773 stripped
+--- !u!23 &139817857318696846 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 4873183977996579007, guid: 5083a6897a798ae429ca1235c860e7f5,
     type: 3}
-  m_PrefabInstance: {fileID: 9113863761950868586}
+  m_PrefabInstance: {fileID: 4778808055856940849}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6088132787704214229 stripped
+--- !u!1 &7518243725643313550 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3028554537304045247, guid: 5083a6897a798ae429ca1235c860e7f5,
     type: 3}
-  m_PrefabInstance: {fileID: 9113863761950868586}
+  m_PrefabInstance: {fileID: 4778808055856940849}
   m_PrefabAsset: {fileID: 0}
